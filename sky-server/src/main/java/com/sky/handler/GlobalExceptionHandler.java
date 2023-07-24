@@ -27,8 +27,12 @@ public class GlobalExceptionHandler {
         return Result.error(ex.getMessage());
     }
 
-    //SQLIntegrityConstraintViolationException: Duplicate entry 'dsdsad' for key 'employee.idx_username'
 
+    /**
+     * 处理SQL异常
+     * @param ex
+     * @return
+     */
     @ExceptionHandler
     public Result SQLIntegrityConstraintViolationException(SQLIntegrityConstraintViolationException ex){
         String message = ex.getMessage();
