@@ -12,6 +12,11 @@ spring:
       url: jdbc:mysql://${sky.datasource.host}:${sky.datasource.port}/${sky.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: ${sky.datasource.username}
       password: ${sky.datasource.password}
+  redis:
+    port: ${sky.redis.port}
+    password: ${sky.datasource.password}
+    host: ${sky.datasource.host}
+    database: ${sky.redis.database}
 
 mybatis:
   #mapper配置文件
@@ -43,3 +48,4 @@ sky:
     access-key-secret: ${sky.alioss.access-key-secret}
     access-key-id: ${sky.alioss.access-key-id}
     bucket-name: ${sky.alioss.bucket-name}
+
