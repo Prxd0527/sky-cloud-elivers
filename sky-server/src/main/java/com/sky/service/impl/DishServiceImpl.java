@@ -77,7 +77,10 @@ public class DishServiceImpl implements DishService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
-    @Override
+    /**
+     * 菜品批量删除
+     * @param ids
+     */
     public void deleteBatch(List<Long> ids) {
         //判断菜品是否能够删除---是否存在在售中的菜品
         for (Long id : ids) {
@@ -146,6 +149,18 @@ public class DishServiceImpl implements DishService {
             dishFlavorMapper.insertBatch(flavors);
         }
 
+    }
 
+    /**
+     * 根据分类id查询菜品
+     * @param categoryId
+     * @return
+     */
+    public List<Dish> list(Long categoryId) {
+        Dish dish = Dish.builder()
+                .categoryId(categoryId)
+                .status(StatusConstant.ENABLE)
+                .build();
+        return dishMapper.list(dish);
     }
 }
