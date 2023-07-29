@@ -47,8 +47,6 @@ public class DishServiceImpl implements DishService {
      * 新增菜品和对应口味
      * @param dishDTO
      */
-
-
     @Transactional  //事务回滚
     public void saveWithFlavor(DishDTO dishDTO) {
 
@@ -160,12 +158,12 @@ public class DishServiceImpl implements DishService {
 
     /**
      * 根据分类id查询菜品
-     * @param categoryId
+     * @param name
      * @return
      */
-    public List<Dish> list(Long categoryId) {
+    public List<Dish> list(String name) {
         Dish dish = Dish.builder()
-                .categoryId(categoryId)
+                .name(name)
                 .status(StatusConstant.ENABLE)
                 .build();
         return dishMapper.list(dish);

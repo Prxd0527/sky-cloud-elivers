@@ -64,7 +64,7 @@ public class DishController {
     @DeleteMapping
     @ApiOperation("菜品批量删除")
     public Result delete(@RequestParam List<Long> ids){
-        log.info("菜品批量山吹：{}",ids);
+        log.info("菜品批量删除：{}",ids);
         dishService.deleteBatch(ids);
         return Result.success();
     }
@@ -96,14 +96,15 @@ public class DishController {
     }
 
     /**
-     * 根据分类id查询菜品
-     * @param categoryId
+     * 根据名称查询菜品
+     * @param name
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("根据分类id查询菜品")
-    public Result<List<Dish>> list(Long categoryId){
-        List<Dish> list = dishService.list(categoryId);
+    public Result<List<Dish>> list(String name){
+        log.info("list打印：{}",name);
+        List<Dish> list = dishService.list(name);
         return Result.success(list);
     }
 
