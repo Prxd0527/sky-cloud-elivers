@@ -157,7 +157,7 @@ public class DishServiceImpl implements DishService {
     }
 
     /**
-     * 根据分类查询菜品
+     * 根据分类和查询菜品
      * @param categoryId
      * @return
      */
