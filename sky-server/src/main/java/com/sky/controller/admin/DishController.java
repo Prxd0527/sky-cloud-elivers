@@ -96,17 +96,19 @@ public class DishController {
     }
 
     /**
-     * 根据名称查询菜品
-     * @param name
+     * 根据分类查询菜品
+     * @param categoryId
      * @return
      */
     @GetMapping("/list")
     @ApiOperation("根据分类id查询菜品")
-    public Result<List<Dish>> list(String name){
-        log.info("list打印：{}",name);
-        List<Dish> list = dishService.list(name);
+    public Result<List<Dish>> list(@RequestParam(required = false) Long categoryId,
+                                   @RequestParam(required = false) String name){
+        log.info("list打印：{}",categoryId);
+        List<Dish> list = dishService.list(categoryId,name);
         return Result.success(list);
     }
+
 
     /**
      * 菜品起售停售
