@@ -172,11 +172,14 @@ public class OrderServiceImpl implements OrderService {
                 .build();
         Orders byNumber = orderMapper.getByNumber(ordersPaymentDTO.getOrderNumber());
 
+
         if (byNumber.getStatus() == 2){
             throw new OrderBusinessException("该订单已支付");
         }
+        if (byNumber.getStatus() == 1){
+            paySuccess(ordersPaymentDTO.getOrderNumber());
+        }
 
-        paySuccess(ordersPaymentDTO.getOrderNumber());
         return orderPaymentVO;
     }
 
