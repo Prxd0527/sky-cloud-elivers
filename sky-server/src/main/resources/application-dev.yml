@@ -19,3 +19,11 @@ sky:
   wechat:
     appid: wx7a7925c7b88a31ec
     secret: 1713de2dc0797a568ec68ffc5aad4664
+          #TODO 上线后补全
+    mchid:                          #商户号
+    mchSerialNo:                    #对应证书序列号
+    privateKeyFilePath:             #私钥文件地址
+    apiV3Key:                       #解密密钥
+    weChatPayCertFilePath:          #平台证书文件
+    notifyUrl:                      #支付成功回调地址
+    refundNotifyUrl:                #退款回调地址

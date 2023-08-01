@@ -30,7 +30,7 @@ import java.util.Base64;
 import java.util.List;
 
 /**
- * 微信支付工具类
+ * wechat pay工具类
  */
 @Component
 public class WeChatPayUtil {
