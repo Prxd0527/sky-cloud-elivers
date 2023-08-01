@@ -166,8 +166,6 @@ public class OrderServiceImpl implements OrderService {
      * @return
      */
     public OrderPaymentVO SimulatedPayment(OrdersPaymentDTO ordersPaymentDTO) {
-
-        paySuccess(ordersPaymentDTO.getOrderNumber());
         OrderPaymentVO orderPaymentVO = OrderPaymentVO.builder()
                 .nonceStr(UUID.randomUUID().toString().replaceAll("-", ""))
                 .timeStamp(String.valueOf(System.currentTimeMillis()))
@@ -178,6 +176,7 @@ public class OrderServiceImpl implements OrderService {
             throw new OrderBusinessException("该订单已支付");
         }
 
+        paySuccess(ordersPaymentDTO.getOrderNumber());
         return orderPaymentVO;
     }
 
