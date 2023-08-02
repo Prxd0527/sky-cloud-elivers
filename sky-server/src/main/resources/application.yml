@@ -64,3 +64,7 @@ sky:
     weChatPayCertFilePath: ${sky.wechat.weChatPayCertFilePath}
     notifyUrl: ${sky.wechat.notifyUrl}
     refundNotifyUrl: ${sky.wechat.refundNotifyUrl}
+  shop:
+    address: 广州市南沙区蕉门公园
+  baidu:
+    ak: zByx58ZlsRcL6Q3g8G0Siac0E7oRNSjN

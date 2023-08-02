@@ -27,3 +27,5 @@ sky:
     weChatPayCertFilePath:          #平台证书文件
     notifyUrl:                      #支付成功回调地址
     refundNotifyUrl:                #退款回调地址
+
+
