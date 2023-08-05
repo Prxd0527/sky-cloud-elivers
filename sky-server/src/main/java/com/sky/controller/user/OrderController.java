@@ -51,7 +51,7 @@ public class OrderController {
 //      OrderPaymentVO orderPaymentVO = orderService.payment(ordersPaymentDTO);
 //      log.info("生成预支付交易单：{}", orderPaymentVO);
 
-        //TODO 模拟支付接口，上线后采用上面接口
+        //TODO 模拟支付接口，上线后采用上面payment接口
         OrderPaymentVO orderPaymentVO = orderService.SimulatedPayment(ordersPaymentDTO);
 
         return Result.success(orderPaymentVO);
@@ -110,5 +110,19 @@ public class OrderController {
         orderService.repetition(id);
         return Result.success();
     }
+
+    /**
+     * 用户催单
+     * @param id
+     * @return
+     */
+    @GetMapping("/reminder/{id}")
+    @ApiOperation("用户催单")
+    public  Result reminder(@PathVariable("id") Long id ) {
+        orderService.reminder(id);
+
+        return Result.success();
+    }
+
 
 }

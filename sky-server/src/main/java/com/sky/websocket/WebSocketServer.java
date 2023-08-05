@@ -1,4 +1,4 @@
-package com.sky.Websocket;
+package com.sky.websocket;
 
 import org.springframework.stereotype.Component;
 import javax.websocket.OnClose;
