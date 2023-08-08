@@ -17,8 +17,8 @@ sky:
     host: localhost
     database: 1
   wechat:
-    appid: wx7a7925c7b88a31ec
-    secret: 1713de2dc0797a568ec68ffc5aad4664
+    appid: 
+    secret: 
           #TODO 上线后补全
     mchid:                          #商户号
     mchSerialNo:                    #对应证书序列号
